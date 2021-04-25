@@ -12,7 +12,7 @@ variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '251cea6c-efe8-404b-a0f5-04a6bc257476'
   imageRepository: 'ransdesaiclientmerchantportal'
-  containerRegistry: 'ranscontainerregistry.azurecr.io'
+  containerRegistry: 'RDEplay.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/ClientMerchantPortal/Dockerfile'
   tag: '$(Build.BuildId)'
 
