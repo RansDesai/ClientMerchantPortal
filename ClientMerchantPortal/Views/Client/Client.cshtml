@@ -1,8 +1,66 @@
-﻿@model ClientMerchantPortal.Models.ClientDetails
+﻿@model ClientMerchantPortal.Context.ClientDetails
 @{
     ViewBag.Title = "Client";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Client = @Model.Owener1Name</h2>
+<h2>Client Dashboard</h2>
+
+@using (Html.BeginForm("AddClient", "Client", FormMethod.Post))
+{
+<div class="container">
+    <div class="form-group">
+        <label> Client ID</label>
+        @Html.TextBoxFor(x => x.CId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label> Bank Detail</label>
+        @Html.TextBoxFor(x => x.BankAccount, new { @class = "form-control" })
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label> Primary Owner Name</label>
+                @Html.TextBoxFor(x => x.OwnerName1, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label> Primary Owner Address</label>
+                @Html.TextBoxFor(x => x.OwnerAddress1, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label> Primary Owner Contact</label>
+                @Html.TextBoxFor(x => x.OwnerContactNo1, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label> Primary Owner Position</label>
+                @Html.TextBoxFor(x => x.OwnerPosition1, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="form-group">
+                <label> Secondary OwnerName Name</label>
+                @Html.TextBoxFor(x => x.OwnerName2, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label> Secondary Owner Address</label>
+                @Html.TextBoxFor(x => x.OwnerAddress2, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label> Secondary Owner Contact</label>
+                @Html.TextBoxFor(x => x.OwnerContactNo2, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label> Secondary Owner Position</label>
+                @Html.TextBoxFor(x => x.OwnerPosition2, new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group"><button type="submit" class="btn btn-primary"> ENTER</button></div>
+
+
+
+</div>
+}
 

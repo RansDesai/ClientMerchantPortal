@@ -1,0 +1,21 @@
+﻿
+
+/*TABS*/
+
+.tabbable-custom:not(.checkin-results) > .nav-tabs > li {
+	width:auto;
+}
+
+/*Modals*/
+
+@media (max-width: 1024px) {
+	.modal-body .modal-side-tabs {
+
+	}
+}
+
+@media (min-width: 1399px) {
+	.modal-body .modal-side-tabs {
+
+	}
+}

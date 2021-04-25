@@ -1,0 +1,146 @@
+﻿.page-header-acc-dates {
+    /*background-color: #21527a;
+    color: white;*/
+    width: 300px;
+}
+
+.page-header-client {
+    margin-top: 12px;
+    margin-left: 50px;
+}
+
+.page-header-search {
+    border: none;
+    text-align: left;
+    /*margin-left: 10px;*/
+}
+
+.page-header-client-text {
+    /*color: #4177a4;*/
+    font-size: 14px;
+}
+
+.page-header-client-no {
+    /*color: white;*/
+    font-size: 14px;
+}
+
+.page-header-client-version {
+    font-size: 10px;
+    color: #AAA;
+}
+
+.page-header-user {
+    /*color: white;*/
+    font-size: 13px;
+}
+
+.page-header-title {
+    position: absolute;
+    top: 0;
+    left: 30%;
+    padding-top: 12px;
+    width: 35%;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.page-header-title-text {
+    /*color: white;*/
+    font-size: 16px;
+}
+
+.page-header-toolbar {
+    clear: both;
+    height: 30px;
+    background: #4d4d4d;
+    color: #FFF;
+    line-height: 30px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    .page-header-toolbar ul {
+        padding-left: 11px;
+        margin-bottom: 0;
+    }
+
+        .page-header-toolbar ul li {
+            display: inline-block;
+            list-style: none;
+            padding: 0 5px;
+            vertical-align: top;
+        }
+
+.isIpad .page-header-toolbar ul {
+    padding-left: 0 !important;
+}
+
+    .isIpad .page-header-toolbar ul li {
+        /*border-right: 1px solid #6b6b6b;*/
+    }
+
+        .isIpad .page-header-toolbar ul li a {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+.page-header-toolbar ul li a img {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 2px !important;
+}
+
+.page-header-toolbar ul li a {
+    color: #DDD;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 30px;
+    line-height: 30px;
+}
+
+.page-header-toolbar ul li .dd-name:hover {
+    color: #FFF !important;
+    background-color: #080808;
+}
+
+.page-header-toolbar ul li a i {
+    margin-top: 8px;
+    font-size: 20px;
+    /*height: 30px;*/
+}
+
+.navbar-text-info {
+    /*color: #4177a4!important;*/
+    margin-right: 5px !important;
+}
+
+.navbar-text-data {
+    /*color: white!important;*/
+    margin-left: 0 !important;
+}
+
+.sidebar-search > div > span > a.tooltip-inner {
+    width: 350px;
+}
+
+@media (max-width: 1024px) {
+    /* 1024 */
+    .page-header-title {
+        position: absolute;
+        top: 0;
+        left: 30%;
+        padding-top: 12px;
+        width: 35%;
+        height: 40px;
+        /*text-align: left !important;*/
+        text-align: left;
+        vertical-align: middle;
+    }
+}
+/* END Custom RMS formatting to match default theme rmsdefault */

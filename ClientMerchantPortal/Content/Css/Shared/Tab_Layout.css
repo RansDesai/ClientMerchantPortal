@@ -1,0 +1,407 @@
+﻿html,
+body,
+body section {
+  float: left;
+  width: 100%;
+  height: 100%;
+  max-height: 100% !important;
+  overflow: hidden;
+}
+body {
+  margin: 0;
+}
+section,
+p,
+label,
+div,
+button,
+a,
+b,
+span,
+li {
+  font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif !important;
+}
+#layoutBody {
+  float: left;
+  height: auto;
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+.blueBG {
+  background-color: #65B6D9 !important;
+  border-bottom: 1px solid #386B81;
+  color: #113f52 !important;
+  text-shadow: none !important;
+}
+#Partial {
+  height: 80px;
+  width: 100%;
+  float: left;
+  margin: 0;
+  padding: 0;
+  z-index: 10003924092;
+}
+input[type='text'],
+input[type='tel'],
+input[type='password'] {
+  /*padding: 2px 5px;*/
+  border: 1.5px solid #787878;
+  border-radius: 0px;
+  height: 30px;
+  font-family: Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+  font-size: 17px;
+  text-align: center;
+  padding: 0;
+}
+.selectList {
+  float: left;
+  border: 1.5px solid #787878;
+  padding: 0;
+  height: 32px;
+}
+.selectList a {
+  border: 0 !important;
+  padding: 0;
+  height: 30px !important;
+  line-height: 32px !important;
+}
+select {
+  float: left;
+  height: 30px;
+  line-height: 30px !important;
+  border: 1px solid grey;
+  border-radius: 3px;
+  font-family: Arial;
+  font-weight: 500;
+  font-size: 16px;
+  padding-left: 1%;
+  background-image: url('/Content/images/pdf-arrowDown.png');
+  -moz-background-size: 25px;
+  -o-background-size: 25px;
+  -webkit-background-size: 25px;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: right center;
+  text-align: center;
+  -webkit-appearance: none !important;
+  background-color: white !important;
+}
+article {
+  float: left;
+  height: calc(100% - 50px);
+  height: -moz-calc(100% - 50px);
+  height: -webkit-calc(100% - 50px);
+  /*width: calc(~"100% - 180px");*/
+  width: -webkit-calc(100% - 181px);
+  width: -moz-calc(100% - 181px);
+  width: calc(100% - 181px);
+}
+.Button,
+.button,
+.navigateAnchor {
+  float: left;
+  text-align: center;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  font-family: Arial;
+  font-size: 16px;
+  -webkit-text-shadow: none !important;
+  text-shadow: none !important;
+  text-decoration: none !important;
+  /*background-color:#9ad12e;
+    border:1px solid #81971a;
+    color: #404b09;*/
+  background-color: #d0d0d0;
+  border: 1px solid #4f4f4f;
+  color: #3a3736;
+}
+.title,
+#darkspace {
+  float: left;
+  width: 100%;
+  margin-left: 0;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  font-family: Helvetica, Arial, 'DejaVu Sans', 'Liberation Sans', Freesans, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #787878;
+}
+#darkspace {
+  width: -webkit-calc(99%) !important;
+  width: -moz-calc(99%) !important;
+  width: calc(99%) !important;
+  /*border-right: 1px solid grey !important;*/
+  background-color: #475e6c !important;
+  background-color: white;
+  height: 30px;
+  display: none !important;
+}
+#header {
+  width: 100%;
+  height: 50px;
+}
+#header a {
+  background: none;
+  color: white;
+}
+#header ul {
+  width: 100% !important;
+  height: 50px;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+#header ul li {
+  float: left !important;
+  height: 50px;
+  border: 0 !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+#header ul li span {
+  color: #fff !important;
+  font: arial 600 !important;
+}
+#header ul li:nth-child(1) {
+  width: 40px !important;
+  height: 50px;
+  margin-left: 10px !important;
+}
+#header ul li:nth-child(2) {
+  width: auto !important;
+  min-width: -webkit-calc(25% - 50px) !important;
+  min-width: -moz-calc(25% - 50px) !important;
+  min-width: -o-calc(25% - 50px) !important;
+  min-width: calc(25% - 50px) !important;
+}
+#header ul li:nth-child(2) span {
+  float: left !important;
+  height: 50px;
+  width: auto !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  margin-left: 10px !important;
+  line-height: 50px !important;
+}
+#header ul li:nth-child(3) span {
+  float: left !important;
+  height: 50px;
+  width: auto !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin-left: 10px !important;
+  line-height: 50px !important;
+}
+#header ul li:nth-child(3) span label {
+  margin: 0 !important;
+}
+#header ul li:nth-of-type(4) {
+  float: right !important;
+  width: auto !important;
+  height: 50px;
+  line-height: 50px;
+  /*color: white !important;*/
+  /*color:black  !important;*/
+  margin-right: 10px !important;
+  opacity: 0.5;
+}
+#header ul li:nth-of-type(5) {
+  float: right !important;
+  width: auto !important;
+  height: 50px !important;
+  margin-right: 20px !important;
+  line-height: 50px;
+  text-align: center;
+  padding-left: 30px;
+  background-image: url(/Images/Shared/Usericon.png);
+  background-size: 15px 23px !important;
+  background-repeat: no-repeat !important;
+  background-position: left center !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+#header ul li:nth-child(4) a {
+  float: left !important;
+  height: 35px;
+  padding: 0 9px !important;
+  line-height: 35px !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  border: 1px solid #575757 !important;
+  -webkit-border-radius: 4px !important;
+  border-radius: 4px !important;
+  font-family: Arial !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  margin-top: 7.5px !important;
+  background-color: #787878 !important;
+  -webkit-text-shadow: 1px -1px 5px #333333 !important;
+  text-shadow: 1px -1px 1px black !important;
+}
+#userNameSpan {
+  float: right !important;
+  width: auto !important;
+  height: 50px !important;
+  line-height: 50px;
+  text-align: center;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+#hideMenu {
+  float: left;
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  width: 30px;
+  background-image: url(../../../../Images/Icons/Navicon.png) !important;
+  background-position: center !important;
+  -moz-background-size: 20px !important;
+  -o-background-size: 20px !important;
+  -webkit-background-size: 20px !important;
+  background-size: 20px !important;
+  background-repeat: no-repeat;
+  margin-top: 10px !important;
+  border-radius: 4px;
+  border: 2px outset buttonface !important;
+  background-color: #f0f0f0 !important;
+}
+nav {
+  height: calc(100% - 50px);
+  height: -moz-calc(100% - 50px);
+  height: -webkit-calc(100% - 50px);
+  width: 180px !important;
+  float: left !important;
+  border-right: 1px solid grey !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  /*background-color: #006c89 !important;*/
+  /*background-color: #516b7b;*/
+  /*background-color: #475e6c !important;*/
+  /*background-color: #3a3736 !important;*/
+  overflow-y: auto !important;
+  border-top: 1px solid #585858 !important;
+}
+nav ul {
+  float: left;
+  width: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+nav ul li {
+  float: left !important;
+  width: 100% !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  height: 50px;
+  /*border-bottom: 1px solid grey !important;*/
+  border-bottom: 1px solid #585858 !important;
+  /*background-image: -webkit-gradient( linear, left top, left bottom, color-stop(0.4, #ACC3D4), color-stop(1, #475E6C) );
+            background-image: -o-linear-gradient(bottom, #475E6C 40%, #99B3C7 100%);
+            background-image: -moz-linear-gradient(bottom, #475E6C 40%, #99B3C7 100%);
+            background-image: -webkit-linear-gradient(bottom, #475E6C 40%, #99B3C7 100%);
+            background-image: -ms-linear-gradient(bottom, #475E6C 40%, #99B3C7 100%);
+            background-image: linear-gradient(to bottom, #475E6C 40%, #99B3C7 100%);*/
+}
+nav ul li a {
+  float: left;
+  text-decoration: none;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  padding-left: 15px;
+  -webkit-text-shadow: 1px -1px 5px #333333;
+  text-shadow: 1px -1px 1px black;
+}
+nav ul li a:hover {
+  color: white !important;
+  -webkit-text-shadow: 1px -1px 5px #333333;
+  text-shadow: 1px -1px 1px black;
+  text-decoration: none !important;
+}
+.accordMenuLI {
+  min-height: 50px;
+  height: auto !important;
+}
+.accord {
+  float: left;
+  text-decoration: none;
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  padding-left: 15px;
+  -webkit-text-shadow: 1px -1px 5px #333333;
+  text-shadow: 1px -1px 1px black;
+}
+.accordUl li a {
+  /*background-color: #2e2b2b !important;*/
+  background-color: #909090 !important;
+  border-bottom: 1px solid #444444;
+  text-shadow: none !important;
+}
+.menuColor {
+  /*old*/
+  background: none !important;
+  background-color: #3a3736 !important;
+  color: white !important;
+}
+/*Loading Icon*/
+#loader {
+  width: 70px !important;
+  height: 70px !important;
+  float: left;
+  /*background: url(/Images/Shared/ajax-loader.gif) no-repeat center transparent;*/
+  background: url(/Content/images/CircleLoader.GIF) no-repeat center;
+  -moz-background-size: 70px;
+  -o-background-size: 70px;
+  background-size: 70px;
+  text-align: center;
+  padding: 10px;
+  background-color: transparent !important;
+  font: normal 16px Tahoma, Geneva, sans-serif;
+  z-index: 2;
+  overflow: auto;
+}
+#loadingScreen {
+  height: auto;
+  min-height: 5px !important;
+  padding: 0;
+  margin: 0;
+}
+.loadingScreenWindow {
+  width: auto !important;
+  background: none !important;
+  background-image: none !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+.loadingScreenWindow .ui-dialog-titlebar {
+  display: none;
+}
+.loadingScreenWindow .ui-dialog {
+  display: none;
+  height: auto !important;
+}
+.loadingScreenWindow .ui-dialog.ui-widget-content,
+.loadingScreenWindow .ui-dialog-content {
+  display: none;
+  height: auto !important;
+}
+/*# sourceMappingURL=Tab_Layout.css.map */

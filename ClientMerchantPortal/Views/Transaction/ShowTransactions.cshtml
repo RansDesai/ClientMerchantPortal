@@ -1,0 +1,51 @@
+﻿@model List<ClientMerchantPortal.Context.TransactionDetail>
+@{
+    ViewBag.Title = "ShowTransactions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Transaction Dashboard</h2>
+
+<div style="height:700px; border:solid thin lightgray; padding:20px">
+    <table class="col-sm-12">
+        <tr style="height:35px">
+            <th>Transaction Id</th>
+            <th>Merchant Id</th>
+            <th>Merchant Name</th>
+            <th>Invoice No</th>
+            <th>Order Description</th>
+            <th>Amount</th>
+            <th>Patment Status</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var item in Model)
+
+        {
+    <tr style="border-top:solid thin lightgray;border-bottom:solid thin lightgray; height:35px">
+        <th>@item.TransId</th>
+        <td>@item.MerchantID</td>
+        <td>@item.MerchantName</td>
+        <td>@item.InvoiceNo</td>
+        <td>@item.TransDescription</td>
+        <td>@item.TransAmount</td>
+        @if (item.AmountStatus == false)
+        {
+            <td>Not Paid</td>
+ }
+        else
+        {
+            <td>Paid</td>
+        }
+
+        <td>
+            <a onclick="edit(item.TransId)" class="mr-5"><i class="far fa-pencil-alt"></i></a>
+            <a href="@Url.Action("DeleteTransaction", new { item.TransId})" class="mr-5"><i class="far fa-trash-alt"></i></a>
+        </td>
+    </tr>
+
+        }
+
+
+    </table>
+</div>
