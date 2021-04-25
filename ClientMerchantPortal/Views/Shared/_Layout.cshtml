@@ -7,23 +7,42 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-   
+    <style>
+        a {
+            color: black !important;
+        }
+    </style>
 </head>
+
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:white;">
         <div class="container">
-            
-            <div class="navbar-collapse collapse" style="font-size:19px;">
+
+            <div class="navbar-collapse collapse" style="font-size:25px;padding: 0px 35px 0px 90px;">
+                
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home","Index", "Home")</li>
-                    <li>@Html.ActionLink("Transaction", "ShowTransactions", "Transaction")</li>
-                    <li>@Html.ActionLink("Add Transaction", "Transaction", "Transaction")</li>
+                    <li>
+                        <a href="/" style=" color: #2758c7 !important; font-weight: 600;"> Welcome to Portal</a>
+                    </li>
+                    <li>
+                        <a href="/" class="far fa-home" data-toggle="tooltip" title="Home"></a>
+                    </li>
+                    <li>
+                        <a href="/Transaction/Transaction" class="far fa-file-invoice-dollar" data-toggle="tooltip" title="Transaction Dashboard"></a>
+                    </li>
+                    <li>
+                        <a href="/MerchantDetails/Merchant" class="far fa-users" data-toggle="tooltip" title="Merchant Dashboard"></a>
+                    </li>
 
                 </ul>
 
                 <ul class="nav navbar-nav" style="float:right">
-                    <li>@Html.ActionLink("Login", "Login")</li>
-                    <li>@Html.ActionLink("Client Dashboard", "Client", "Client")</li>
+                    <li>
+                        <a href="/Login/Login" class="far fa-sign-in-alt" data-toggle="tooltip" title="Login"></a>
+                    </li>
+                    <li>
+                        <a href="/Client/Client" class="far fa-user-circle" data-toggle="tooltip" title="Client Info"></a>
+                    </li>
                 </ul>
 
 
@@ -31,12 +50,10 @@
 
         </div>
     </div>
-    <div class="container body-content">
+    <div class="container body-content" style="padding:30px">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year </p>
-        </footer>
+        
+
     </div>
 
     @Scripts.Render("~/bundles/jquery")

@@ -214,6 +214,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Context\LoginParameter.cs">
+      <DependentUpon>dbModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Context\MerchantDetail.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
@@ -223,6 +226,7 @@
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MerchantDetailsController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -2109,6 +2113,7 @@
     <Content Include="Views\Transaction\ShowTransactions.cshtml" />
     <Content Include="Views\Transaction\Transaction.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\MerchantDetails\Merchant.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

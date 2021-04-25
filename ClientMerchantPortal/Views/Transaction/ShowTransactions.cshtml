@@ -22,27 +22,34 @@
         @foreach (var item in Model)
 
         {
-    <tr style="border-top:solid thin lightgray;border-bottom:solid thin lightgray; height:35px">
-        <th>@item.TransId</th>
-        <td>@item.MerchantID</td>
-        <td>@item.MerchantName</td>
-        <td>@item.InvoiceNo</td>
-        <td>@item.TransDescription</td>
-        <td>@item.TransAmount</td>
-        @if (item.AmountStatus == false)
-        {
-            <td>Not Paid</td>
- }
-        else
-        {
-            <td>Paid</td>
-        }
+            <tr style="border-top:solid thin lightgray;border-bottom:solid thin lightgray; height:35px">
+                <th>@item.TransId</th>
+                <td>@item.MerchantID</td>
+                <td>@item.MerchantName</td>
+                <td>@item.InvoiceNo</td>
+                <td>@item.TransDescription</td>
+                <td>@item.TransAmount</td>
+                @if (item.AmountStatus == false)
+                {
+                    <td>Not Paid</td>
+                }
+                else
+                {
+                    <td>Paid</td>
+                }
 
-        <td>
-            <a onclick="edit(item.TransId)" class="mr-5"><i class="far fa-pencil-alt"></i></a>
-            <a href="@Url.Action("DeleteTransaction", new { item.TransId})" class="mr-5"><i class="far fa-trash-alt"></i></a>
-        </td>
-    </tr>
+                <td>
+                    <a href="@Url.Action("Transaction",
+                    new {@item.TransId,
+                    @item.MerchantID,
+                    @item.MerchantName,
+                    @item.InvoiceNo,
+                    @item.TransDescription,
+                    @item.TransAmount,
+                    @item.AmountStatus })" class="mr-5"><i class="far fa-pencil-alt"></i></a>
+                    <a href="@Url.Action("DeleteTransaction", new { item.InvoiceNo})" class="mr-5"><i class="far fa-trash-alt"></i></a>
+                </td>
+            </tr>
 
         }
 

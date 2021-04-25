@@ -12,7 +12,9 @@ namespace ClientMerchantPortal.Controllers
     {
 
         // GET: Client
+       
         ClientMerchantEntities dbObj = new ClientMerchantEntities();
+        
         public ActionResult Client()
         {
            

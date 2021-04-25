@@ -1,0 +1,90 @@
+﻿@model ClientMerchantPortal.Context.MerchantDetail
+@{
+    ViewBag.Title = "Merchant";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    label{
+        font-weight:100 !important;
+    }
+</style>
+
+<div>
+    <div class="col-sm-3 col-sm-offset-2">
+        <h3 style="color:#1b00ff;margin-bottom:30px"> Add Merchant</h3>
+
+        @using (Html.BeginForm("AddMerchant", "MerchantDetail", FormMethod.Post))
+        {
+            <div class="container">
+                <div class="form-group">
+                    <label> Merchant ID</label>
+                    @Html.TextBoxFor(x => x.MerchantId, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label> Merchant Name</label>
+                    @Html.TextBoxFor(x => x.MerchantName, new { @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Address</label>
+                    @Html.TextBoxFor(x => x.MerchantAdress, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Contact No</label>
+                    @Html.TextBoxFor(x => x.MerchantContact, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Bank Account</label>
+                    @Html.TextBoxFor(x => x.MerchantBankAcc, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label> Merchant Email</label>
+                    @Html.TextBoxFor(x => x.MerchantEmail, new { @class = "form-control" })
+                </div>
+
+
+
+
+
+
+                <div class="form-group"><button type="submit" class="btn btn-primary"> ENTER</button></div>
+
+
+
+            </div>
+        }
+    </div>
+
+    <div class="col-sm-7">
+        <h3 style="color:#1b00ff;margin-bottom:35px">Merchant Records</h3>
+        @{
+            var Merchantlist = (List<ClientMerchantPortal.Context.MerchantDetail>)ViewData["MyData"];
+        }
+        <div style="border:solid thin lightgray; height:475px;padding:20px">
+            <table class="col-sm-12">
+                <tr style="height:35px">
+                    <th>Merchant ID</th>
+                    <th>Merchant Name</th>
+                    <th>Address</th>
+                    <th>Contact No</th>
+                    <th>Bank Details </th>
+                    <th>Merchant Email</th>
+                </tr>
+                @foreach (var item in @Merchantlist)
+                {
+                    <tr style="border-top:solid thin lightgray;border-bottom:solid thin lightgray; height:35px">
+                        <td>@item.MerchantId</td>
+                        <td>@item.MerchantName</td>
+                        <td>@item.MerchantAdress\</td>
+                        <td>@item.MerchantContact</td>
+                        <td>@item.MerchantBankAcc</td>
+                        <td>@item.MerchantEmail</td>
+
+                    </tr>
+
+
+                }
+            </table>
+        </div>
+    </div>
+</div>
