@@ -15,5 +15,7 @@ namespace ClientMerchantPortal.Controllers
             var ClientDetails = new ClientDetails() { Owener1Name ="JB Hi-Fi"};
             return View(ClientDetails);
         }
+
+       
     }
 }
