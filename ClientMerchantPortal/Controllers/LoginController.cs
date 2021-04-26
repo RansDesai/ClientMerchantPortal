@@ -1,43 +1,45 @@
-﻿using ClientMerchantPortal.Context;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ClientMerchantPortal.Context;
 using ClientMerchantPortal.Controllers;
 
 namespace ClientMerchantPortal.Controllers
 {
+   
     public class LoginController : Controller
     {
-        // GET: Login
+        
         ClientMerchantEntities dbObj = new ClientMerchantEntities();
-        public ActionResult Login()
+        // GET: Login
+        [HttpGet]
+        public ActionResult Index()
         {
+            List<LoginDetail> details = dbObj.LoginDetails.ToList();
             return View();
         }
 
-        
-        public ActionResult LogginIn(LoginParameter model)
+        public ActionResult CheckLogin(LoginDetail model)
         {
-            var isValid = false;
-            LoginParameter Obj = new LoginParameter();
+            
+            List<LoginDetail> details = dbObj.LoginDetails.ToList();
 
-            List<LoginParameter> List = dbObj.LoginParameters.ToList();
-
-           foreach(var item in List)
+            foreach(var item in details)
             {
-                if(item.Password == model.Password &&  item.Username == model.Username)
+                if(item.Username == model.Username && item.Password == model.Password)
                 {
-                     isValid = true;
+                    var login = true;
+                    ViewData["Loginauth"] = login;
+                    return Redirect("/Home/");
                 }
             }
-
             
-                return RedirectToAction("Client");
-            
+            Response.Write("Invalid login credentials");
+            return View("Index");
         }
 
-        
+       
     }
 }

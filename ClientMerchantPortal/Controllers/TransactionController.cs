@@ -14,59 +14,58 @@ namespace ClientMerchantPortal.Controllers
         ClientMerchantEntities dbObj = new ClientMerchantEntities();
         
         // GET: Transaction
-        public ActionResult Transaction( TransactionDetail model)
+        public ActionResult Transaction()
         {
             var TransList = dbObj.TransactionDetails.ToList();
             ViewData["MyData"] = TransList;
-            if (model != null)
-            {
-                return View(model);
-            }
-            else
+           
             return View();
         }
+
         public ActionResult AddTransaction(TransactionDetail model)
         {
 
-            TransactionDetail TransObj = new TransactionDetail();
-            TransObj.TransDescription = model.TransDescription;
-            TransObj.MerchantID = model.MerchantID;
-            TransObj.MerchantName = model.MerchantName;
-            TransObj.InvoiceNo = model.InvoiceNo;
-            TransObj.AmountStatus = model.AmountStatus;
-            TransObj.TransAmount = model.TransAmount;
-           
+            TransactionDetail TransObj = new TransactionDetail
+            {
+                TransDescription = model.TransDescription,
+                MerchantID = model.MerchantID,
+                MerchantName = model.MerchantName,
+                InvoiceNo = model.InvoiceNo,
+                AmountStatus = model.AmountStatus,
+                TransAmount = model.TransAmount
+            };
 
-            if(model.InvoiceNo == 0)
+
+            if (model.TransId == 0)
             {
                 dbObj.TransactionDetails.Add(TransObj);
                 dbObj.SaveChanges();
+                
             }
             else
             {
                 dbObj.Entry(TransObj).State = EntityState.Modified;
                 dbObj.SaveChanges();
             }
-            
+            ModelState.Clear();
+            var TransList = dbObj.TransactionDetails.ToList();
+            ViewData["MyData"] = TransList;
+
             return View("Transaction");
         }
 
-        [HttpGet]
-        public ActionResult ShowTransactions()
-        {
-            var TransList = dbObj.TransactionDetails.ToList();
-            return View(TransList);
-        }
+        
 
-
-        public ActionResult DeleteTransaction(int id)
+        public ActionResult DeleteTransaction(int TransId)
         {
-            var obj = dbObj.TransactionDetails.Where(x => x.InvoiceNo == id).First();
+            var obj = dbObj.TransactionDetails.Where(x => x.TransId == TransId).First();
             dbObj.TransactionDetails.Remove(obj);
             dbObj.SaveChanges();
             var list = dbObj.TransactionDetails.ToList();
-
-            return View("ShowTransactions", list);
+            ViewData["MyData"] = list;
+            return View("Transaction");
         }
+
+       
     }
 }

@@ -15,46 +15,50 @@
     <h3 style="color:#1b00ff;margin-bottom:30px"> Add Transaction</h3>
     @using (Html.BeginForm("AddTransaction", "Transaction", FormMethod.Post))
     {
-        <div class="container">
-            <div class="form-group">
-                <label> Merchant ID</label>
-                @Html.TextBoxFor(x => x.MerchantID, new { @class = "form-control" })
-            </div>
-            <div class="form-group">
-                <label> Merchant Name</label>
-                @Html.TextBoxFor(x => x.MerchantName, new { @class = "form-control" })
-            </div>
+<div class="container">
+    <div class="form-group">
+        <label> Merchant ID</label>
+        @Html.TextBoxFor(x => x.MerchantID, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label> Merchant Name</label>
+        @Html.TextBoxFor(x => x.MerchantName, new { @class = "form-control" })
+    </div>
 
-            <div class="form-group">
-                <label> Invoice No</label>
-                @Html.TextBoxFor(x => x.InvoiceNo, new { @class = "form-control" })
-            </div>
-            <div class="form-group">
-                <label> Transaction Description</label>
-                @Html.TextBoxFor(x => x.TransDescription, new { @class = "form-control" })
-            </div>
+    <div class="form-group">
+        <label> Invoice No</label>
+        @Html.TextBoxFor(x => x.InvoiceNo, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label> Transaction Description</label>
+        @Html.TextBoxFor(x => x.TransDescription, new { @class = "form-control" })
+    </div>
 
-            <div class="form-group">
-                <label> Amount</label>
-                @Html.TextBoxFor(x => x.TransAmount, new { @class = "form-control" })
-            </div>
+    <div class="form-group">
+        <label> Amount</label>
+        @Html.TextBoxFor(x => x.TransAmount, new { @class = "form-control" })
+    </div>
 
-            <div class="form-group">
-                <label> Payment Status</label>
-                @Html.TextBoxFor(x => x.AmountStatus, new { @class = "form-control" })
-            </div>
+    <div class="form-group">
+        <label> Payment Status</label>
+        @Html.TextBoxFor(x => x.AmountStatus, new { @class = "form-control" })
+    </div>
 
-            <div class="form-group"><button type="submit" class="btn btn-primary"> ENTER</button></div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary"> Add</button>
+        <button type="reset" class="btn btn-danger"> Cancel</button>
+    </div>
+    
 
 
 
-        </div>
+</div>
     }
 </div>
 <div class="col-sm-7">
     <h3 style="color:#1b00ff;margin-bottom:35px">Transaction Records</h3>
     @{
-        var Transationlist = (List<ClientMerchantPortal.Context.TransactionDetail>)ViewData["MyData"];
+        List<ClientMerchantPortal.Context.TransactionDetail> Transationlist = (List<ClientMerchantPortal.Context.TransactionDetail>)ViewData["MyData"];
     }
     <div style="height:560px; border:solid thin lightgray; padding:20px">
         <table class="col-sm-12">
@@ -89,15 +93,15 @@
                     }
 
                     <td>
-                        <a href="@Url.Action("Transaction",
+                        @*<a href="@Url.Action("EditTransaction",
                     new {@item.TransId,
                     @item.MerchantID,
                     @item.MerchantName,
                     @item.InvoiceNo,
                     @item.TransDescription,
                     @item.TransAmount,
-                    @item.AmountStatus })" class="mr-5"><i class="far fa-pencil-alt"></i></a>
-                        <a href="@Url.Action("DeleteTransaction", new { item.InvoiceNo})" class="mr-5"><i class="far fa-trash-alt"></i></a>
+                    @item.AmountStatus })" class="mr-5"><i class="far fa-pencil-alt"></i></a>*@
+                        <a href="@Url.Action("DeleteTransaction","Transaction", new { item.TransId})" class="mr-5"><i class="far fa-trash-alt"></i></a>
                     </td>
                 </tr>
 

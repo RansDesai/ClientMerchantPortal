@@ -28,6 +28,6 @@ namespace ClientMerchantPortal.Context
         public virtual DbSet<ClientDetails> ClientDetails1 { get; set; }
         public virtual DbSet<MerchantDetail> MerchantDetails { get; set; }
         public virtual DbSet<TransactionDetail> TransactionDetails { get; set; }
-        public virtual DbSet<LoginParameter> LoginParameters { get; set; }
+        public virtual DbSet<LoginDetail> LoginDetails { get; set; }
     }
 }

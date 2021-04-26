@@ -20,12 +20,13 @@
           <Property Name="OwnerPosition2" Type="nvarchar" MaxLength="50" />
           <Property Name="BankAccount" Type="int" />
         </EntityType>
-        <EntityType Name="LoginParameters">
+        <EntityType Name="LoginDetail">
           <Key>
-            <PropertyRef Name="Username" />
+            <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="MerchantDetails">
           <Key>
@@ -52,7 +53,7 @@
         </EntityType>
         <EntityContainer Name="ClientMerchantModelStoreContainer">
           <EntitySet Name="ClientDetails" EntityType="Self.ClientDetails" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="LoginParameters" EntityType="Self.LoginParameters" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginDetail" EntityType="Self.LoginDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MerchantDetails" EntityType="Self.MerchantDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TransactionDetails" EntityType="Self.TransactionDetails" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -64,7 +65,7 @@
           <EntitySet Name="ClientDetails1" EntityType="ClientMerchantModel.ClientDetails" />
           <EntitySet Name="MerchantDetails" EntityType="ClientMerchantModel.MerchantDetail" />
           <EntitySet Name="TransactionDetails" EntityType="ClientMerchantModel.TransactionDetail" />
-          <EntitySet Name="LoginParameters" EntityType="ClientMerchantModel.LoginParameter" />
+          <EntitySet Name="LoginDetails" EntityType="ClientMerchantModel.LoginDetail" />
         </EntityContainer>
         <EntityType Name="ClientDetails">
           <Key>
@@ -104,12 +105,13 @@
           <Property Name="TransAmount" Type="Int32" />
           <Property Name="AmountStatus" Type="Boolean" />
         </EntityType>
-        <EntityType Name="LoginParameter">
+        <EntityType Name="LoginDetail">
           <Key>
-            <PropertyRef Name="Username" />
+            <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="Username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -158,11 +160,12 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="LoginParameters">
-            <EntityTypeMapping TypeName="ClientMerchantModel.LoginParameter">
-              <MappingFragment StoreEntitySet="LoginParameters">
+          <EntitySetMapping Name="LoginDetails">
+            <EntityTypeMapping TypeName="ClientMerchantModel.LoginDetail">
+              <MappingFragment StoreEntitySet="LoginDetail">
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

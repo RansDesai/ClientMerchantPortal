@@ -11,10 +11,20 @@ namespace ClientMerchantPortal.Context
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class LoginParameter
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class LoginDetail
     {
+        public int UserId { get; set; }
+       
         public string Username { get; set; }
+
+     
         public string Password { get; set; }
+
+        
+        public string ConfirmPassword { get; set; }
+
     }
 }

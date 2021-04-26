@@ -13,7 +13,7 @@
     <div class="col-sm-3 col-sm-offset-2">
         <h3 style="color:#1b00ff;margin-bottom:30px"> Add Merchant</h3>
 
-        @using (Html.BeginForm("AddMerchant", "MerchantDetail", FormMethod.Post))
+        @using (Html.BeginForm("AddMerchant", "MerchantDetails", FormMethod.Post))
         {
             <div class="container">
                 <div class="form-group">
@@ -43,11 +43,10 @@
                 </div>
 
 
-
-
-
-
-                <div class="form-group"><button type="submit" class="btn btn-primary"> ENTER</button></div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"> Add</button>
+                    <button type="reset" class="btn btn-danger"> Cancel</button>
+                </div>
 
 
 
@@ -69,18 +68,23 @@
                     <th>Contact No</th>
                     <th>Bank Details </th>
                     <th>Merchant Email</th>
+                    <th>Action</th>
                 </tr>
                 @foreach (var item in @Merchantlist)
                 {
-                    <tr style="border-top:solid thin lightgray;border-bottom:solid thin lightgray; height:35px">
-                        <td>@item.MerchantId</td>
-                        <td>@item.MerchantName</td>
-                        <td>@item.MerchantAdress\</td>
-                        <td>@item.MerchantContact</td>
-                        <td>@item.MerchantBankAcc</td>
-                        <td>@item.MerchantEmail</td>
+            <tr style="border-top:solid thin lightgray;border-bottom:solid thin lightgray; height:35px">
+                <td>@item.MerchantId</td>
+                <td>@item.MerchantName</td>
+                <td>@item.MerchantAdress\</td>
+                <td>@item.MerchantContact</td>
+                <td>@item.MerchantBankAcc</td>
+                <td>@item.MerchantEmail</td>
 
-                    </tr>
+                <td>
+                   
+                    <a href="@Url.Action("DeleteMerchant","MerchantDetails", new { item.MerchantId})" class="mr-5"><i class="far fa-trash-alt"></i></a>
+                </td>
+            </tr>
 
 
                 }
