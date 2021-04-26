@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using ClientMerchantPortal.Context;
 using System.Data.Entity;
+using System.Data.SqlClient;
 
 namespace ClientMerchantPortal.Controllers
 {
@@ -17,7 +18,7 @@ namespace ClientMerchantPortal.Controllers
         
         public ActionResult Client()
         {
-           
+            
             return View();
         }
 

@@ -11,12 +11,14 @@ namespace ClientMerchantPortal.Controllers
     
     public class TransactionController : Controller
     {
+
         ClientMerchantEntities dbObj = new ClientMerchantEntities();
-        
+       
         // GET: Transaction
         public ActionResult Transaction()
         {
-            var TransList = dbObj.TransactionDetails.ToList();
+            
+            List<TransactionDetail> TransList = dbObj.TransactionDetails.ToList();
             ViewData["MyData"] = TransList;
            
             return View();

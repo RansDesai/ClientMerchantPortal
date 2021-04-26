@@ -13,17 +13,19 @@ namespace ClientMerchantPortal.Controllers
     {
         
         ClientMerchantEntities dbObj = new ClientMerchantEntities();
+       
         // GET: Login
         [HttpGet]
         public ActionResult Index()
         {
+
             List<LoginDetail> details = dbObj.LoginDetails.ToList();
             return View();
         }
 
         public ActionResult CheckLogin(LoginDetail model)
         {
-            
+
             List<LoginDetail> details = dbObj.LoginDetails.ToList();
 
             foreach(var item in details)

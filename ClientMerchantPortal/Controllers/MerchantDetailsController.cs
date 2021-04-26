@@ -14,7 +14,8 @@ namespace ClientMerchantPortal.Controllers
         ClientMerchantEntities dbObj = new ClientMerchantEntities();
         public ActionResult Merchant()
         {
-            var MerchantList = dbObj.MerchantDetails.ToList();
+
+            List<MerchantDetail> MerchantList = dbObj.MerchantDetails.ToList();
             ViewData["MyData"] = MerchantList;
             return View();
         }

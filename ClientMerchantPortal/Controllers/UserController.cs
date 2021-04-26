@@ -13,7 +13,7 @@ namespace ClientMerchantPortal.Controllers
         // GET: User
         ClientMerchantEntities dbObj = new ClientMerchantEntities();
         public ActionResult AddorEdit(int id=0)
-        {
+        {   
             LoginDetail dbObj = new LoginDetail();
 
             return View(dbObj);
