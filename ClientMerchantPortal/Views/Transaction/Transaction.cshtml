@@ -58,7 +58,7 @@
 <div class="col-sm-7">
     <h3 style="color:#1b00ff;margin-bottom:35px">Transaction Records</h3>
     @{
-        List<ClientMerchantPortal.Context.TransactionDetail> Transationlist = (List<ClientMerchantPortal.Context.TransactionDetail>)ViewData["MyData"];
+        
     }
     <div style="height:560px; border:solid thin lightgray; padding:20px">
         <table class="col-sm-12">
@@ -73,7 +73,7 @@
                 <th>Action</th>
             </tr>
 
-            @foreach (var item in @Transationlist)
+           @*@foreach (var item in @Transationlist)
 
             {
                 <tr style="border-top:solid thin lightgray;border-bottom:solid thin lightgray; height:35px">
@@ -93,19 +93,20 @@
                     }
 
                     <td>
-                        @*<a href="@Url.Action("EditTransaction",
+                        -->
+                        *<a href="@Url.Action("EditTransaction",
                     new {@item.TransId,
                     @item.MerchantID,
                     @item.MerchantName,
                     @item.InvoiceNo,
                     @item.TransDescription,
                     @item.TransAmount,
-                    @item.AmountStatus })" class="mr-5"><i class="far fa-pencil-alt"></i></a>*@
-                        <a href="@Url.Action("DeleteTransaction","Transaction", new { item.TransId})" class="mr-5"><i class="far fa-trash-alt"></i></a>
-                    </td>
-                </tr>
+                    @item.AmountStatus })" class="mr-5"><i class="far fa-pencil-alt"></i></a>
+                    <a href="@Url.Action("DeleteTransaction","Transaction", new { item.TransId})" class="mr-5"><i class="far fa-trash-alt"></i></a>
+                </td>
+            </tr>
 
-            }
+        }*@
 
 
         </table>

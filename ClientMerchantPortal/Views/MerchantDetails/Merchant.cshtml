@@ -56,9 +56,7 @@
 
     <div class="col-sm-7">
         <h3 style="color:#1b00ff;margin-bottom:35px">Merchant Records</h3>
-        @{
-            var Merchantlist = (List<ClientMerchantPortal.Context.MerchantDetail>)ViewData["MyData"];
-        }
+       
         <div style="border:solid thin lightgray; height:475px;padding:20px">
             <table class="col-sm-12">
                 <tr style="height:35px">
@@ -70,7 +68,7 @@
                     <th>Merchant Email</th>
                     <th>Action</th>
                 </tr>
-                @foreach (var item in @Merchantlist)
+                @*@foreach (var item in @Merchantlist)
                 {
             <tr style="border-top:solid thin lightgray;border-bottom:solid thin lightgray; height:35px">
                 <td>@item.MerchantId</td>
@@ -87,7 +85,7 @@
             </tr>
 
 
-                }
+                }*@
             </table>
         </div>
     </div>

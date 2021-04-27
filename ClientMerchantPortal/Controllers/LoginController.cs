@@ -12,35 +12,34 @@ namespace ClientMerchantPortal.Controllers
     public class LoginController : Controller
     {
         
-        ClientMerchantEntities dbObj = new ClientMerchantEntities();
        
         // GET: Login
         [HttpGet]
         public ActionResult Index()
         {
 
-            List<LoginDetail> details = dbObj.LoginDetails.ToList();
+            
             return View();
         }
 
-        public ActionResult CheckLogin(LoginDetail model)
-        {
+        //public ActionResult CheckLogin(LoginDetail model)
+        //{
 
-            List<LoginDetail> details = dbObj.LoginDetails.ToList();
+        //    List<LoginDetail> details = dbObj.LoginDetails.ToList();
 
-            foreach(var item in details)
-            {
-                if(item.Username == model.Username && item.Password == model.Password)
-                {
-                    var login = true;
-                    ViewData["Loginauth"] = login;
-                    return Redirect("/Home/");
-                }
-            }
+        //    foreach(var item in details)
+        //    {
+        //        if(item.Username == model.Username && item.Password == model.Password)
+        //        {
+        //            var login = true;
+        //            ViewData["Loginauth"] = login;
+        //            return Redirect("/Home/");
+        //        }
+        //    }
             
-            Response.Write("Invalid login credentials");
-            return View("Index");
-        }
+        //    Response.Write("Invalid login credentials");
+        //    return View("Index");
+        //}
 
        
     }
